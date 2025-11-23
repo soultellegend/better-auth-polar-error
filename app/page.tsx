@@ -1,6 +1,6 @@
 'use client';
 
-import { useSession } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 
 export default  function DashboardPage() {
   const { 
@@ -8,7 +8,7 @@ export default  function DashboardPage() {
     isPending, 
     error, 
     refetch 
-} = useSession() 
+} = authClient.useSession() 
 
   if(isPending) {
     return <div>Loading...</div>
